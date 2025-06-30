@@ -1,0 +1,84 @@
+/* Typography */
+.h1 {
+    font-size: var(--h1);
+    color: var(--secondary-color);
+    margin-bottom: var(--sp-s);
+}
+.h2 {
+    font-size: var(--h2);
+    color: var(--secondary-color);
+    margin-bottom: var(--sp-s);
+}
+
+/* Buttons */
+.btn {
+    padding: var(--sp-none) var(--sp-s);
+    border: none;
+    border-radius: var(--bd-radius-m);
+    background: var(--secondary-color);
+    color: var(--white-color);
+    font-size: var(--text-btn);
+    font-weight: var(--medium);
+    height: var(--sp-xl);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn:hover {
+    background: var(--main-btn--hover);
+}
+.btn--outline {
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+.btn--outline:hover {
+    background: var(--outline-btn-hover);
+}
+
+/* Form Elements Style */
+.form--label {
+    font-size: var(--text-label);
+    color: var(--secondary-color);
+    margin-bottom: var(--sp-xxs);
+}
+.form--input {
+    padding: var(--sp-none) var(--sp-s);
+    border: none;
+    border-radius: var(--bd-radius-m);
+    height: var(--sp-xl);
+    width: 100%;
+}
+.form--input:focus,
+.form--input:active
+ {
+    outline: 1px solid var(--secondary-color);
+}
+.form--input::placeholder {
+    color: var(--text-placeholder-color);
+    font-weight: 500;
+    font-size: var(--text-placeholder);
+}
+
+/* Card */
+.card {
+    padding: var(--sp-m);
+    border-radius: var(--bd-radius-m);
+    margin: var(--sp-xxs) var(--sp-s);
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: var(--sp-none) var(--sp-s);
+    border-radius: var(--bd-radius-full);
+    font-size: var(--text-description);
+    font-weight: 600;
+}
+
+hr {
+    border: 0.8px solid var(--grey-color);
+    margin: var(--sp-s) var(--sp-none);
+}

@@ -1,0 +1,236 @@
+@import url('variables.css');
+@import url('shared.css');
+
+* {
+    font-family: var(--font-family);
+    box-sizing: inherit;
+    margin: var(--sp-none);
+    padding: var(--sp-none);
+}
+
+body {
+    background-color: var(--white-color);
+}
+
+.nav {
+    padding:  var(--sp-s) var(--content);
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 50px;
+}
+
+.brand {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: var(--logo);
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* Profile */
+.user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-s);
+}
+.user__profile {
+    height: 50px;
+}
+.user__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.user__details p {
+    font-size: var(--text-body);
+    color: var(--secondary-color);
+}
+.user__name {
+    font-size: var(--text-body);
+    color: var(--secondary-color);
+}
+.user__greet {
+    color: var(--secondary-color);
+    font-size: var(--text-body);
+}
+
+
+/* Login form */
+.login {
+    display: flex;
+    flex-direction: row;
+}
+.login__input {
+    display: flex;
+    flex-direction: column;
+}
+.login__input--pin {
+    margin: 0 var(--sp-s);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: var(--sp-xl);
+}
+
+.operations {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+/* Balance */
+.balance {
+    background-color: var(--main-color);
+    box-sizing: border-box;
+    margin-top: var(--sp-none);
+}
+.balance .h1 {
+    margin-bottom: var(--sp-none);
+}
+
+/* Operations */
+.operation {
+    background-color: var(--main-light-color);
+    box-sizing: border-box;
+}
+.transfer__form {
+    display: flex;
+    flex-direction: row;
+    gap: var(--sp-s);
+    box-sizing: border-box;
+    width: 100%;
+}
+.transfer__form--field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: var(--sp-s);
+}
+.btn__operation {
+    width: 100%;
+}
+
+/* Close account */
+.operation__close-account {
+    background-color: var(--red-extra-light-color);
+}
+.btn__close-account {
+    background-color: var(--red-color);
+    width: 100%;
+}
+
+/* Movements */
+.movements {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: var(--sp-s);
+    background-color: var(--grey-colo)
+}
+.movement__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.movement__header--title .h2 {
+    margin-bottom: var(--sp-xxs);
+}
+.movement__header--date {
+    font-size: var(--text-description);
+    color: var(--text-label-color);
+}
+
+/* Summary */
+.summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: var(--sp-xxl);
+    margin: var(--sp-m) var(--sp-none);
+}
+.summary__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--sp-xxs);
+    color: var(--secondary-light-color);
+}
+.summary__label {
+    font-size: var(--text-body);
+    color: var(--secondary-color);
+}
+.summary__value {
+    font-weight: 700;
+    font-size: var(--text-body);
+}
+.summary__value--incoming {
+    color: var(--main-vibrant-color);
+}
+.summary__value--outcoming {
+    color: var(--red-color);
+}
+.summary__value--interest {
+    color: var(--main-vibrant-color);
+}
+
+/* Operation */
+/* Operation transfer */
+.movements__list {
+    background-color: var(--grey-light-color);
+    padding: var(--sp-m);
+    border-radius: var(--bd-radius-m);
+    display: flex;
+    flex-direction: column;
+}
+.movements__type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sp-xs) var(--sp-none);
+}
+.deposit-icon {
+    width: 40px;
+    height: 40px;
+}
+.withdrawal-icon {
+    width: 40px;
+    height: 40px;
+}
+.movements__label--deposit {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+.movements__label--withdrawal {
+    background-color: var(--red-light-color);
+    color: var(--red-color);
+
+}
+.movements__detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-s);
+}
+.movement__detail--alignment {
+    display: flex;
+    flex-direction: column;
+}
+.movements__value {
+    font-weight: 700;
+    font-size: var(--text-highlight);
+    margin-bottom: var(--sp-xxs);
+}
+.movements__date {
+    font-size: var(--text-description);
+    color: var(--secondary-color);
+}
