@@ -65,7 +65,7 @@
 .card {
     padding: var(--sp-m);
     border-radius: var(--bd-radius-m);
-    margin: var(--sp-xxs) var(--sp-s);
+    margin: var(--sp-xxs) var(--sp-none);
 }
 
 .tag {

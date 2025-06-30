@@ -30,6 +30,21 @@ body {
     font-weight: 700;
     color: var(--secondary-color);
 }
+.brand img {
+    width: 2.5rem;
+}
+
+.app {
+    /* opacity: 0; */
+    transition: all 1s;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: var(--sp-xl);
+    gap: var(--sp-m);
+}
 
 /* Profile */
 .user {
@@ -59,7 +74,6 @@ body {
     font-size: var(--text-body);
 }
 
-
 /* Login form */
 .login {
     display: flex;
@@ -71,12 +85,6 @@ body {
 }
 .login__input--pin {
     margin: 0 var(--sp-s);
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    margin: var(--sp-xl);
 }
 
 .operations {
@@ -130,7 +138,7 @@ body {
 .movements {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     margin: var(--sp-s);
     background-color: var(--grey-colo)
 }
