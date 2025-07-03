@@ -82,3 +82,7 @@ hr {
     border: 0.8px solid var(--grey-color);
     margin: var(--sp-s) var(--sp-none);
 }
+
+.hidden {
+    display: none;
+}
