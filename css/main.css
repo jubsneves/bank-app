@@ -198,7 +198,7 @@ body {
 /* Operation transfer */
 .movements__list {
     background-color: var(--grey-light-color);
-    padding: var(--sp-m);
+    padding: var(--sp-xxs) var(--sp-m);
     border-radius: var(--bd-radius-m);
     display: flex;
     flex-direction: column;
@@ -208,15 +208,19 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--sp-xs) var(--sp-none);
+    padding: var(--sp-m) var(--sp-none);
+    border-bottom: 0.6px solid var(--grey-color);
+}
+.movements__row:last-child{
+    border-bottom: none;
 }
 .deposit-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 .withdrawal-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 .movements__label--deposit {
     background-color: var(--main-color);
@@ -225,7 +229,6 @@ body {
 .movements__label--withdrawal {
     background-color: var(--red-light-color);
     color: var(--red-color);
-
 }
 .movements__detail {
     display: flex;
@@ -239,11 +242,11 @@ body {
     flex-direction: column;
 }
 .movements__value {
-    font-weight: 700;
+    font-weight: 600;
     font-size: var(--text-highlight);
     margin-bottom: var(--sp-xxs);
 }
-.movements__date {
+.date {
     font-size: var(--text-description);
     color: var(--secondary-color);
 }
