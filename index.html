@@ -20,22 +20,10 @@
                 <img src="/assets/logo.png" alt="Baink logo">
                 baink
             </span>
-            <div class="user">
-                <img src="/assets/profile.png" alt="user photo profile" class="user__profile">
-                <div class="user__details">
-                    <p class="user__greet">Hey <strong class="user__name">Amanda</strong>,</p>
-                    <span>good afternoon!</span>
-                </div>
-            </div>
-            <form class="login">
-                <!-- <div class="login__input"> -->
-                <!-- <label for="input-user" class="form--label">User</label> -->
+            <div id="containerUser"></div>
+            <form class="login__container">
                 <input type="text" placeholder="User" id="input-user" class="form--input login__input--user">
-                <!-- </div>
-                <div class="login__input"> -->
-                <!-- <label for="input-pin" class="form--label">Pin</label> -->
-                <input type="text" placeholder="Pin" maxlength="4" id="input-pin" class="form--input login__input--pin">
-                <!-- </div> -->
+                <input type="password" placeholder="Pin" maxlength="4" id="input-pin" class="form--input login__input--pin">
                 <button class="btn btn__login">Login</button>
             </form>
         </nav>
@@ -46,40 +34,52 @@
             <!-- Balance -->
             <section class="card balance">
                 <h2 class="h2">Current Balance</h2>
-                <h1 class="h1">€1,000.00</h1>
+                <h1 class="h1 balance__value">€1,000.00</h1>
             </section>
             <!-- Transfer -->
             <section class="card operation">
                 <h2 class="h2">Transfer Money</h2>
                 <form class="transfer">
                     <div class="transfer__form">
-                        <div class="transfer__form--field">
+                        <div class="form--row">
                             <label for="transfer__username" class="form--label">Transfer to</label>
                             <input type="text" class="form--input" placeholder="username" id="transfer__username">
                         </div>
-                        <div class="transfer__form--field">
+                        <div class="form--row">
                             <label for="transfer__amount" class="form--label">Amount</label>
                             <input type="text" class="form--input" placeholder="amount" id="transfer__amount">
                         </div>
                     </div>
-                    <button class="btn btn__operation">Transfer</button>
+                    <button class="btn btn__operation btn__operation--transfer">Transfer</button>
                 </form>
             </section>
             <!-- Loan -->
             <section class="card operation">
                 <h2 class="h2">Loan Request</h2>
                 <form class="loan">
-                    <div class="transfer__form--field">
+                    <div class="form--row">
                         <label for="loan__amount" class="form--label">Amount</label>
                         <input type="text" class="form--input" placeholder="amount" id="loan__amount">
                     </div>
-                    <button class="btn btn__operation">Loan</button>
+                    <button class="btn btn__operation btn__operation--loan">Loan</button>
                 </form>
             </section>
             <!-- Close Account -->
             <section class="card operation operation__close-account">
                 <h2 class="h2">Close Account</h2>
-                <button class="btn btn__close-account">Close Account</button>
+                <form class="transfer">
+                    <div class="transfer__form">
+                        <div class="form--row">
+                            <label for="transfer__username" class="form--label">Username</label>
+                            <input type="text" class="form--input" placeholder="username" id="close-account--username">
+                        </div>
+                        <div class="form--row">
+                            <label for="confirm-pin" class="form--label">Pin</label>
+                            <input type="password" class="form--input" placeholder="pin" id="close-account--pin">
+                        </div>
+                    </div>
+                    <button class="btn btn__close-account">Close Account</button>
+                </form>
             </section>
         </div>
 
@@ -90,34 +90,19 @@
                     <h2 class="h2">Last Updates</h2>
                     <p class="movement__header--date">26/06/2025, 17:30</p>
                 </div>
-                <button class="btn btn--outline">
-                    <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M13.2928 7.71929C13.1053 7.53176 13 7.27745 13 7.01229C13 6.74712 13.1053 6.49282 13.2928 6.30529L16.2928 3.30529C16.385 3.20978 16.4954 3.1336 16.6174 3.08119C16.7394 3.02878 16.8706 3.00119 17.0034 3.00004C17.1362 2.99888 17.2678 3.02419 17.3907 3.07447C17.5136 3.12475 17.6253 3.199 17.7192 3.29289C17.8131 3.38679 17.8873 3.49844 17.9376 3.62133C17.9879 3.74423 18.0132 3.87591 18.012 4.00869C18.0109 4.14147 17.9833 4.27269 17.9309 4.39469C17.8785 4.5167 17.8023 4.62704 17.7068 4.71929L14.7068 7.71929C14.5193 7.90676 14.265 8.01207 13.9998 8.01207C13.7346 8.01207 13.4803 7.90676 13.2928 7.71929Z"
-                            fill="#1D3208" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M20.7068 7.71925C20.5193 7.90672 20.265 8.01203 19.9998 8.01203C19.7346 8.01203 19.4803 7.90672 19.2928 7.71925L16.2928 4.71925C16.1106 4.53065 16.0098 4.27804 16.0121 4.01585C16.0144 3.75365 16.1196 3.50284 16.305 3.31743C16.4904 3.13202 16.7412 3.02685 17.0034 3.02457C17.2656 3.0223 17.5182 3.12309 17.7068 3.30525L20.7068 6.30525C20.8943 6.49278 20.9996 6.74708 20.9996 7.01225C20.9996 7.27741 20.8943 7.53172 20.7068 7.71925Z"
-                            fill="#1D3208" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M16.9998 5.01233C17.265 5.01233 17.5194 5.11769 17.7069 5.30522C17.8944 5.49276 17.9998 5.74711 17.9998 6.01233V14.0123C17.9998 14.2775 17.8944 14.5319 17.7069 14.7194C17.5194 14.907 17.265 15.0123 16.9998 15.0123C16.7346 15.0123 16.4802 14.907 16.2927 14.7194C16.1052 14.5319 15.9998 14.2775 15.9998 14.0123V6.01233C15.9998 5.74711 16.1052 5.49276 16.2927 5.30522C16.4802 5.11769 16.7346 5.01233 16.9998 5.01233ZM12.7068 12.3053C12.8943 12.4929 12.9996 12.7472 12.9996 13.0123C12.9996 13.2775 12.8943 13.5318 12.7068 13.7193L9.7068 16.7193C9.51819 16.9015 9.26559 17.0023 9.0034 17C8.7412 16.9977 8.49039 16.8926 8.30498 16.7071C8.11957 16.5217 8.0144 16.2709 8.01212 16.0087C8.00984 15.7465 8.11064 15.4939 8.2928 15.3053L11.2928 12.3053C11.4803 12.1179 11.7346 12.0125 11.9998 12.0125C12.265 12.0125 12.5193 12.1179 12.7068 12.3053Z"
-                            fill="#1D3208" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M5.29279 12.3052C5.48031 12.1178 5.73462 12.0125 5.99979 12.0125C6.26495 12.0125 6.51926 12.1178 6.70679 12.3052L9.70679 15.3052C9.8023 15.3975 9.87848 15.5078 9.93089 15.6298C9.9833 15.7518 10.0109 15.8831 10.012 16.0158C10.0132 16.1486 9.98789 16.2803 9.93761 16.4032C9.88733 16.5261 9.81307 16.6377 9.71918 16.7316C9.62529 16.8255 9.51364 16.8998 9.39074 16.9501C9.26784 17.0003 9.13616 17.0256 9.00339 17.0245C8.87061 17.0233 8.73939 16.9957 8.61738 16.9433C8.49538 16.8909 8.38503 16.8147 8.29279 16.7192L5.29279 13.7192C5.10532 13.5317 5 13.2774 5 13.0122C5 12.7471 5.10532 12.4928 5.29279 12.3052Z"
-                            fill="#1D3208" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M8.99976 15.0123C8.73454 15.0123 8.48019 14.907 8.29265 14.7194C8.10511 14.5319 7.99976 14.2775 7.99976 14.0123V6.01233C7.99976 5.74711 8.10511 5.49276 8.29265 5.30522C8.48019 5.11769 8.73454 5.01233 8.99976 5.01233C9.26497 5.01233 9.51933 5.11769 9.70686 5.30522C9.8944 5.49276 9.99976 5.74711 9.99976 6.01233V14.0123C9.99976 14.2775 9.8944 14.5319 9.70686 14.7194C9.51933 14.907 9.26497 15.0123 8.99976 15.0123Z"
-                            fill="#1D3208" />
-                    </svg>Sort
+                <button class="btn btn--outline btn__sort">
+                    <img src="/assets/sort-default.png" alt="sort icon" class="icon__sort">
+                    Sort
                 </button>
             </div>
             <div class="summary">
                 <div class="summary__item">
                     <p class="summary__label">Incoming:</p>
-                    <p class="summary__value summary__value--incoming">€0000</p>
+                    <p class="summary__value summary__value--in">€0000</p>
                 </div>
                 <div class="summary__item">
                     <p class="summary__label">Outcoming:</p>
-                    <p class="summary__value summary__value--outcoming">€0000</p>
+                    <p class="summary__value summary__value--out">€0000</p>
                 </div>
                 <div class="summary__item">
                     <p class="summary__label">Interest:</p>
@@ -125,7 +110,7 @@
                 </div>
             </div>
             <div class="movements__list">
-                <div class="movements__type">
+                <div class="movements__row movements__type--deposit">
                     <div class="movements__detail">
                         <img src="/assets/deposit-icon.png" alt="deposit icon" class="deposit-icon">
                         <div class="movement__detail--alignment">
@@ -137,7 +122,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="movements__type">
+                <div class="movements__row movements__type--withdrawal">
                     <div class="movements__detail">
                         <img src="/assets/withdrawal-icon.png" alt="deposit icon" class="deposit-icon">
                         <div class="movement__detail--alignment">

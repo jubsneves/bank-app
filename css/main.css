@@ -35,7 +35,7 @@ body {
 }
 
 .app {
-    /* opacity: 0; */
+    opacity: 0;
     transition: all 1s;
 }
 
@@ -47,13 +47,15 @@ body {
 }
 
 /* Profile */
+
 .user {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: var(--sp-s);
+    transition: opacity 0.3s ease;
 }
 .user__profile {
+    border-radius: var(--bd-radius-s);
     height: 50px;
 }
 .user__details {
@@ -75,7 +77,7 @@ body {
 }
 
 /* Login form */
-.login {
+.login__container {
     display: flex;
     flex-direction: row;
 }
@@ -115,7 +117,7 @@ body {
     box-sizing: border-box;
     width: 100%;
 }
-.transfer__form--field {
+.form--row {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -132,6 +134,9 @@ body {
 .btn__close-account {
     background-color: var(--red-color);
     width: 100%;
+}
+.btn__close-account:hover {
+    background-color: var(--red-hover-color);
 }
 
 /* Movements */
@@ -179,10 +184,10 @@ body {
     font-weight: 700;
     font-size: var(--text-body);
 }
-.summary__value--incoming {
+.summary__value--in {
     color: var(--main-vibrant-color);
 }
-.summary__value--outcoming {
+.summary__value--out {
     color: var(--red-color);
 }
 .summary__value--interest {
@@ -198,7 +203,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-.movements__type {
+.movements__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
