@@ -144,7 +144,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 70%;
-    margin: var(--sp-s);
+    margin: var(--sp-none) var(--sp-s);
     background-color: var(--grey-colo)
 }
 .movement__header {
@@ -249,4 +249,9 @@ body {
 .date {
     font-size: var(--text-description);
     color: var(--secondary-color);
+}
+
+.logged-out {
+    margin-top: var(--sp-s);
+    font-size: var(--text-description);
 }
