@@ -3,7 +3,7 @@
     /* Colors */
     --main-color: #AFE67F;
     --main-vibrant-color: #5dc800;
-    --secondary-color: #1D3208;
+    --secondary-color: #012D16;
     --secondary-light-color: #2B5600;
     --main-light-color: #E6F5D8;
     --red-color: #900000; 
@@ -14,11 +14,16 @@
     --grey-light-color: #F8F8F8;
     --white-color: #FFFFFF;
 
-    --main-btn--hover: #2B5600;
+    --main-gradient-start: #C3F53C;
+    --main-gradient-end: #6cc598;
+    --btn-gradient-start: #115732;
+    --btn-gradient-end: #012D16;
+
     --outline-btn-hover: #E6F5D8;
 
     --bd-radius-s: 4px;
     --bd-radius-m: 10px;
+    --bd-radius-l: 20px;
     --bd-radius-full: 100px;
 
     /* Spacing */
@@ -35,8 +40,13 @@
     /* Fonts */
     --font-family: "Instrument Sans", sans-serif;
     --logo: 24px;
-    --h1: 24px;
-    --h2: 20px;
+    --h1: 28px;
+    --h2: 22px;
+    --h3: 20px;
+    --h4: 18px;
+    --h5: 14px;
+    --title--extra-large: 32px;
+    --title: 20px;
     --text-body: 16px;
     --text-highlight: 20px;
     --text-description: 14px;
@@ -47,6 +57,7 @@
     --text-placeholder-color: #798B67;
 
     --regular: 400;
-    --medium: 600;
+    --medium: 500;
+    --semi-bold: 600;
     --bold: 700;
 }

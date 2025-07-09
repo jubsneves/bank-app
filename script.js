@@ -234,19 +234,13 @@ const logOutTimer = function () {
         time--;
     }
 
-    let time = 10;
+    let time = 600;
     tick();
     const timer = setInterval(tick, 1000);
 }
 
 //Event handler
 let currentAccount, timer;
-
-//***‼️Fake always logged in‼️*** */‼
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 1;
-
 
 //Login
 btnLogin.addEventListener('click', function (e) {
@@ -353,3 +347,4 @@ btnCloseAcc.addEventListener('click', function (e) {
         inputLoginUsername.value = inputLoginPin.value = '';
     }
 });
+
