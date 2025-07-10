@@ -8,18 +8,12 @@
     padding: var(--sp-none);
 }
 
-body {
-    background-color: var(--white-color);
+html {
+    box-sizing: border-box;
 }
 
-.nav {
-    padding:  var(--sp-s) var(--content);
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    height: 50px;
+body {
+    background-color: var(--white-color);
 }
 
 .brand {
@@ -97,7 +91,7 @@ body {
 
 /* Balance */
 .balance {
-    background-color: var(--main-color);
+    background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
     box-sizing: border-box;
     margin-top: var(--sp-none);
 }
