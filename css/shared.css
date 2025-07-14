@@ -93,6 +93,7 @@ a.btn {
     width: 100%;
     padding: var(--sp-s) var(--content);
     background-color: var(--main-color);
+    position: fixed;
 }
 
 .nav__links {
@@ -282,15 +283,18 @@ hr {
     .menu-toggle img {
         transition: opacity 0.1s ease;
     }
+    .nav {
+        padding: var(--sp-s) var(--sp-m);
+    }
     .nav__links {
         position: absolute;
         flex-direction: column;
         justify-content: flex-start;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         top: 70px;
         left: 0;
-        padding: var(--sp-s) var(--content);
+        padding-top: var(--sp-m);
         background-color: var(--main-light-color);
         display: none;
     }
@@ -298,9 +302,9 @@ hr {
         display: flex;
     }
     .nav__item {
-        width: 100%;
+        width: 100vw;
         text-align: center;
-        padding: var(--sp-xxs) var(--sp-none);
+        padding: var(--sp-s) var(--sp-m);
     }
     .footer__nav {
         display: flex;
