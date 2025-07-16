@@ -70,3 +70,71 @@ tabsContainer.addEventListener('click', (e) => {
        document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
     }
 });
+
+const allSections = document.querySelectorAll('.section');
+
+//Load sections
+const sectionObserverOptions = {
+    root: null,
+    threshold: 0.15, 
+}
+
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    })
+}, sectionObserverOptions);
+
+allSections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+//Load images
+const imgsTarget = document.querySelectorAll('.features__img');
+
+const imgObserverOptions = {
+    root: null,
+    threshold: 0.5,
+}
+
+const imgObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.filter = 'blur(0px)';
+            observer.unobserve(entry.target);
+        }
+    })
+}, imgObserverOptions);
+
+imgsTarget.forEach(img => {
+    imgObserver.observe(img);
+});
+
+// Slider
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left'); 
+const btnRight = document.querySelector('.slider__btn--right'); 
+
+slides.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * i}%)`
+});
+slider.style.overflow = 'visible';
+slider.style.transform = 'scale(0.4) translateX(-800px)';
+
+let curSlide = 0;
+let maxSlide = slides.length;
+
+btnRight.addEventListener('click', () => {
+    if (curSlide === maxSlide - 1) {
+        curSlide = 0;
+    } else {
+        curSlide++;
+    }
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
+    })
+});
