@@ -94,6 +94,7 @@ a.btn {
     padding: var(--sp-s) var(--content);
     background-color: var(--main-color);
     position: fixed;
+    z-index: 100;
 }
 
 .nav__links {
