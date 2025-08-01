@@ -120,10 +120,6 @@ const formatMovementDate = function (date, locale) {
     if (daysPassed <= 7) return `${daysPassed} days ago`;
     else {
         return new Intl.DateTimeFormat(locale).format(date);
-        // const day = `${date.getDate()}`.padStart(2, '0');
-        // const month = `${date.getMonth()}`.padStart(2, '0');
-        // const year = date.getFullYear();
-        // return `${day}/${month}/${year}`;
     }
 }
 
@@ -271,13 +267,7 @@ btnLogin.addEventListener('click', function (e) {
             weekday: 'long'
         }
         labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
-        // const now = new Date();
-        // const day = `${now.getDate()}`.padStart(2, '0');
-        // const month = `${now.getMonth() + 1}`.padStart(2, '0');
-        // const year = now.getFullYear();
-        // const hr = `${now.getHours()}`.padStart(2, '0');
-        // const min = `${now.getMinutes()}`.padStart(2, '0');
-        // labelDate.textContent = `${day}/${month}/${year}, ${hr}:${min}`;
+
 
         containerLogin.classList.add('hidden');
         containerLogin.classList.remove('login__container');
