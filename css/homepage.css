@@ -1,12 +1,16 @@
-@import url('variables.css');
-@import url('shared.css');
-@import url('main.css');
+@import url("variables.css");
+@import url("shared.css");
+@import url("main.css");
 
 .section--hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
+  background: linear-gradient(
+    135deg,
+    var(--main-gradient-start),
+    var(--main-gradient-end)
+  );
   padding: 160px var(--content) var(--content) var(--content);
 }
 
@@ -78,7 +82,8 @@
 
 .operations__tab {
   padding: var(--sp-s) var(--sp-m);
-  border-radius: var(--bd-radius-m) var(--bd-radius-m) var(--bd-radius-none) var(--bd-radius-none);
+  border-radius: var(--bd-radius-m) var(--bd-radius-m) var(--bd-radius-none)
+    var(--bd-radius-none);
   border: none;
   color: var(--secondary-color);
   font-size: var(--text-body);
@@ -118,7 +123,8 @@
   grid-template-columns: 1fr 5fr;
   justify-items: center;
   align-items: center;
-  border-radius: var(--bd-radius-none) var(--bd-radius-none) var(--bd-radius-m) var(--bd-radius-m);
+  border-radius: var(--bd-radius-none) var(--bd-radius-none) var(--bd-radius-m)
+    var(--bd-radius-m);
 }
 
 /* Testimonials */
@@ -127,7 +133,8 @@
   height: 20rem;
   position: relative;
   margin: var(--sp-m) var(--content) var(--sp-s) var(--content);
-  
+  border-radius: var(--bd-radius-l);
+
   overflow: hidden;
 }
 
@@ -140,10 +147,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: var(--main-light-color);
-  border-radius: var(--bd-radius-l);
-
   transition: transform 1s;
 }
 
@@ -241,7 +245,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
+  background: linear-gradient(
+    135deg,
+    var(--main-gradient-start),
+    var(--main-gradient-end)
+  );
 }
 
 .newsletter__img {
@@ -299,7 +307,6 @@
 }
 
 @media (max-width: 768px) {
-
   /* Features */
   .features__feature {
     grid-template-columns: 1fr;

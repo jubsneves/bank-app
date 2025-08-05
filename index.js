@@ -1,0 +1,223 @@
+"use strict";
+
+const btnMenuToggle = document.querySelector(".menu-toggle");
+const iconMenu = btnMenuToggle.querySelector("img");
+const linkNav = document.querySelector(".nav__links");
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".btn--close-modal");
+const btnShowModal = document.querySelectorAll(".btn--show-modal");
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+const navLinks = document.querySelectorAll(".nav__link");
+
+btnMenuToggle.addEventListener("click", () => {
+  linkNav.classList.toggle("show");
+  iconMenu.style.opacity = 0;
+  setTimeout(() => {
+    if (linkNav.classList.contains("show")) {
+      iconMenu.src = "/assets/close-icon.svg";
+    } else {
+      iconMenu.src = "/assets/menu-icon.svg";
+    }
+    iconMenu.style.opacity = 1;
+  }, 100);
+});
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+btnShowModal.forEach((btn) => {
+  btn.addEventListener("click", openModal);
+});
+
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+btnScrollTo.addEventListener("click", () => {
+  section1.scrollIntoView({ behavior: "smooth" });
+});
+
+document.querySelector(".nav__links").addEventListener("click", (el) => {
+  el.preventDefault();
+  if (el.target.classList.contains("nav__link")) {
+    const id = el.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
+  }
+});
+
+// Typewritter
+const typeWritterEffect = function () {
+  new Typewriter(".slogan", {
+    strings: [
+      "Bank Smarter 🧠",
+      "Grow Faster 📈",
+      "Save More 💰",
+      "Invest Wisely 🤑",
+    ],
+    autoStart: true,
+    time: 32,
+    loop: true,
+    cursor: "",
+  });
+};
+
+typeWritterEffect();
+
+// Tabbed component
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tabs");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+tabsContainer.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".operations__tab");
+  if (clicked) {
+    tabs.forEach((t) => t.classList.remove("operations__tab--active"));
+    tabsContent.forEach((c) =>
+      c.classList.remove("operations__content--active")
+    );
+    clicked.classList.add("operations__tab--active");
+
+    document
+      .querySelector(`.operations__content--${clicked.dataset.tab}`)
+      .classList.add("operations__content--active");
+  }
+});
+
+const allSections = document.querySelectorAll(".section");
+
+//Load sections
+const sectionObserverOptions = {
+  root: null,
+  threshold: 0.15,
+};
+
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+}, sectionObserverOptions);
+
+allSections.forEach((section) => {
+  sectionObserver.observe(section);
+});
+
+//Load images
+const imgsTarget = document.querySelectorAll(".features__img");
+
+const imgObserverOptions = {
+  root: null,
+  threshold: 0.5,
+};
+
+const imgObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.filter = "blur(0px)";
+      observer.unobserve(entry.target);
+    }
+  });
+}, imgObserverOptions);
+
+imgsTarget.forEach((img) => {
+  imgObserver.observe(img);
+});
+
+// Slider
+const slider = function () {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const btnRight = document.querySelector(".slider__btn--right");
+  const btnLeft = document.querySelector(".slider__btn--left");
+  const dotContainer = document.querySelector(".dots");
+  let curSlide = 0;
+  let maxSlide = slides.length;
+
+  const createDots = function () {
+    slides.forEach((_, i) => {
+      dotContainer.insertAdjacentHTML(
+        "beforeend",
+        `<button class="dots__dot" data-slide="${i}"></button>`
+      );
+    });
+  };
+
+  const activateDot = function (slide) {
+    document
+      .querySelectorAll(".dots__dot")
+      .forEach((dot) => dot.classList.remove("dots__dot--active"));
+
+    let activeSlide = document.querySelector(
+      `.dots__dot[data-slide="${slide}"]`
+    );
+    activeSlide.style.transition = "all 1s";
+    activeSlide.classList.add("dots__dot--active");
+  };
+
+  const goToSlide = function (slide) {
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${100 * (i - slide)}%)`;
+    });
+  };
+
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+
+    goToSlide(curSlide);
+    activateDot(curSlide);
+  };
+
+  const previousSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    activateDot(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+    createDots();
+    activateDot(0);
+  };
+
+  init();
+
+  // Event Handlers
+  btnRight.addEventListener("click", nextSlide);
+  btnLeft.addEventListener("click", previousSlide);
+
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "ArrowLeft") {
+      previousSlide();
+    } else if (ev.key === "ArrowRight") {
+      nextSlide();
+    }
+  });
+
+  dotContainer.addEventListener("click", function (ev) {
+    if (ev.target.classList.contains("dots__dot")) {
+      curSlide = Number(ev.target.dataset.slide);
+      goToSlide(curSlide);
+      activateDot(curSlide);
+    }
+  });
+};
+slider();
