@@ -199,6 +199,7 @@ hr {
 }
 .footer__item {
   list-style: none;
+  text-align: center;
 }
 .footer__link {
   color: var(--white-color);
